@@ -1,0 +1,21 @@
+先编译libdmtx，再编译dmtx-utils
+
+编译libdmtx:
+
+	sh autogen.sh
+
+	./configure
+
+	make
+
+	编译好的库文件在项目的./lib目录下
+
+编译dmtx-utils:
+	sh autogen.sh 
+
+	./configure PKG_CONFIG_PATH=项目libdmtx编译时所在目录
+
+	make CPPFLAGS=-I项目libdmtx编译时所在路径 LDFLAGS=-L项目libdmtx编译时所在路径
+
+	编码工具在dmtxwrite目录
+	解码工具在dmtxread目录
